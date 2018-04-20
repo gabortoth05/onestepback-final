@@ -1,0 +1,51 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:custom="oneStepBack.utils"
+		controllerName="oneStepBack.view.Initial"  xmlns:l="sap.ui.layout"  xmlns:tnt="sap.tnt" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="" showNavButton="true" navButtonPress="backToMain">
+		<content>
+	
+
+			
+			<l:BlockLayout class="customLayout" >
+				<l:BlockLayoutRow>
+					<l:BlockLayoutCell class="reducedPadding" >
+						<HBox>
+							<Image
+								src="img/onestepback_footprint.jpeg"
+								densityAware="false"
+								width="200px"
+								class="roundImage" >
+							</Image>
+						<VBox width="100%">
+								<ObjectHeader
+									class="customText"
+									binding=""
+									title="Karbonlábnyomod"
+									number="{inputModel>/finalResult}"
+									numberUnit="kg CO2/év" >
+								</ObjectHeader>		
+								<ObjectHeader
+									class="customText"
+									binding=""
+									title="Ami egyenlő"
+									number="{inputModel>/finalResultInTrees}"
+									numberUnit="darab fa éves munkájával" >
+								</ObjectHeader>		
+						</VBox>
+						</HBox>
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+				<l:BlockLayoutRow>
+					 <l:BlockLayoutCell>
+						<!-- <Button text="Tudj meg többet" class="alignRight" press="toDetails"/> -->
+					 </l:BlockLayoutCell>
+
+				</l:BlockLayoutRow>
+
+			</l:BlockLayout>
+			
+			
+
+	
+		</content>
+	</Page>
+</core:View>

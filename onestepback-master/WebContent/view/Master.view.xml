@@ -1,0 +1,90 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:custom="oneStepBack.utils"
+		controllerName="oneStepBack.view.Master" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Próbáld ki kalkulációnkat!">
+		<headerContent>
+			<Button icon="sap-icon://action" text="Iratkozz fel!" tooltip="feliratkozás" press="onSubscribe"/>
+		</headerContent>
+		<content>
+		
+				<l:BlockLayout>
+					<l:BlockLayoutRow class="calculator">
+						<l:BlockLayoutCell width="45%">
+						<IconTabBar
+							id="idIconTabBarFiori2"
+							upperCase="true"
+							expanded="{device>/isNoPhone}"
+							class="sapUiResponsiveContentPadding">
+							<items>
+								<IconTabFilter
+									text="Otthon">
+									<Input placeholder="Mennyi átlagosan a villanyszámlád?" value="{inputModel>/electricity}" />
+									<Input placeholder="Mennyi átlagosan a gázszámlád" value="{inputModel>/gas}"/>
+									<Input placeholder="Évente hány liter fűtőolajat használsz?" value="{inputModel>/heatOil}"/>
+									<Input placeholder="Évente hány liter autógázt használsz?" value="{inputModel>/carGas}"/>
+									<Input placeholder="Mennyi a havi szemétdíjad?" value="{inputModel>/trash}"/>
+									<Input placeholder="Átlagosan mennyi a vízszámlád?" value="{inputModel>/water}"/>
+								</IconTabFilter>
+								<IconTabFilter
+									text="Utazás">
+									<Input placeholder="Évente hány kilométert autózol?" value="{inputModel>/byCar}"/>
+									<Input placeholder="Évente hány kilométert buszozol?" value="{inputModel>/byBus}"/>
+									<Input placeholder="Évente hány kilométert metrozol?" value="{inputModel>/byMetro}"/>
+									<Input placeholder="Évente hány kilométert taxizol?" value="{inputModel>/byTaxi}"/>
+									<Input placeholder="Évente hány kilométert vonatozol?" value="{inputModel>/byTrain}"/>
+									<Input placeholder="Évente hányszor repülsz?" value="{inputModel>/byPlane}"/>
+								</IconTabFilter>
+								<IconTabFilter
+									text="Étkezés">
+									<Input placeholder="Naponta hány gramm húst eszel?" value="{inputModel>/foodM}"/>
+									<Input placeholder="Hány liter tejet iszol naponta?" value="{inputModel>/foodD}"/>
+									<HBox>
+										<Switch state="{inputModel>/dailyWeat}" customTextOn="Igen" customTextOff="Nem" />
+										<Label class="switch sapUiMediumMarginBegin" text="napi szinten eszel gabonaféléket?" />
+									</HBox>
+									<HBox>
+										<Switch state="{inputModel>/dailyFruit}" customTextOn="Igen" customTextOff="Nem" />
+										<Label class="switch sapUiMediumMarginBegin" text="Napi szinten eszel gyümölcsöt?" />
+									</HBox>
+									<HBox>
+										<Switch state="{inputModel>/dailyCake}" customTextOn="Igen" customTextOff="Nem" />
+										<Label class="switch sapUiMediumMarginBegin" text="Napi szinten eszel süteményt?" />
+									</HBox>
+									<HBox>
+										<Switch state="{inputModel>/dailySoda}" customTextOn="Igen" customTextOff="Nem" />
+										<Label class="switch sapUiMediumMarginBegin" text="Napi szinten iszol üdítőket?" />
+									</HBox>
+								</IconTabFilter>
+							
+							</items>
+						</IconTabBar>	
+						<Button text="Lássuk az eredményt" type="Accept" class="alignRight" press="onCalculation"/>				
+						</l:BlockLayoutCell>
+						<l:BlockLayoutCell width="55%" class="customBlockCell" >
+							
+					<!-- 		<VBox class="customVbox">
+								<Title text="Tippek" ></Title>
+							
+								<Text text="Ha egy kérdés számodra nem releváns hagyd nyugodtan üresen, vagy írj be egy nullát" ></Text>
+								
+								<Text text="Próbálj meg minél több releváns adatot kitölteni" ></Text>
+								
+
+							</VBox> -->
+							
+							
+						</l:BlockLayoutCell>
+					</l:BlockLayoutRow>
+<!-- 					<l:BlockLayoutRow class="footer">
+						<l:BlockLayoutCell>
+							<custom:footer /> 
+						</l:BlockLayoutCell>
+					</l:BlockLayoutRow> -->
+				</l:BlockLayout>
+
+				
+			
+			
+			
+		</content>
+	</Page>
+</core:View>
